@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
+import styled from 'styled-components'
+import {db} from './firebase'
+import { collection, getDocs} from 'firebase/firestore'
+import React,{useEffect, useState} from 'react'
+const Card = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 400px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  overflow: scroll;
+
+`
 
 function App() {
+
+  const [reports,setReports] = useState([])
+  const reportsCollectionRef = collection(db,'reports')
+  useEffect(()=>{
+
+    const getReports = async () =>{
+      const data = await getDocs(reportsCollectionRef)
+      setReports(data.docs.map(doc =>({...doc.data(), id:doc.ic})))
+    }
+    getReports()
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+         {
+           reports.map(report => <Card>{report.survey}</Card>)
+         }
+     
     </div>
   );
 }
