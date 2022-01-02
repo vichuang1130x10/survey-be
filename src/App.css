@@ -25,3 +25,44 @@
   margin-top: 40px;
   min-height: calc(100vh - 360px);
 }
+/* Landing */
+.landing-title {
+  height: 90px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.landing-page {
+  display: flex;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.landing-card {
+  width: 48%;
+  margin: 0 auto;
+  border: 1px solid #333;
+  padding: 6px;
+}
+
+.landing-card p {
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.landing-card p span {
+  font-size: 18px;
+  color: #534b9c;
+  background-color: #fff;
+}
+tr,
+th {
+  text-align: center;
+}
