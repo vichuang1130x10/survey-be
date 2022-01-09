@@ -127,9 +127,9 @@ function App() {
             </ModelBlock>
             <ModelBlock>{surveyData.email}</ModelBlock>
             <ModelBlock>
-              <DelButton onClick={() => handleDelete(report.id)}>
+              {/* <DelButton onClick={() => handleDelete(report.id)}>
                 Delete
-              </DelButton>
+              </DelButton> */}
             </ModelBlock>
           </ModelContainer>
         );
