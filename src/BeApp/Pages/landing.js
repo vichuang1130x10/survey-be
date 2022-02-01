@@ -112,8 +112,8 @@ function App() {
       {reports.map((report) => {
         const surveyData = JSON.parse(report.survey);
         const date = new Date(report.time);
-        console.log(surveyData);
-        console.log(date.toISOString());
+        // console.log(surveyData);
+        // console.log(date.toISOString());
         return (
           <ModelContainer
             key={report.id}

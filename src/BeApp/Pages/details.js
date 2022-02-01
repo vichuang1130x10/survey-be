@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 
 function App(props) {
-  console.log(props);
+  // console.log(props);
   const secs = props.location.state.date;
   const date = new Date(secs);
   const background = props.location.state.surveyDate.background;
